@@ -1,17 +1,16 @@
 import Home from './components/Home';
-import Header from './components/Header'
 import Gameboard from './components/Gameboard'
 import Scoreboard from './components/Scoreboard'
-import Footer from './components/Footer'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import styles from './style/style';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
+    <>
+    
     <NavigationContainer>
       <Tab.Navigator
         sceneContainerStyle={{backgroundColor: 'transparent'}}
@@ -27,7 +26,7 @@ export default function App() {
               }
               return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
             },
-            tabBarActiveTintColor: 'orange',
+            tabBarActiveTintColor: 'blue',
             tabBarInactiveTintColor: 'gray',
           })}
         >
@@ -36,5 +35,7 @@ export default function App() {
           <Tab.Screen   name="Scoreboard" component={Scoreboard} />
       </Tab.Navigator>
     </NavigationContainer>
+    
+    </>
   );
 }
